@@ -11,21 +11,32 @@ const StartGameScreen = () => {
                 autoCapitalize="none"
                 autoCorrect={false}
             />
-            <PrimaryButton>Reset</PrimaryButton>
-            <PrimaryButton>Cancel</PrimaryButton>
+            <View style={styles.buttonsContainer}>
+                <View style={styles.buttonContainer}>
+                    <PrimaryButton>Reset</PrimaryButton>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <PrimaryButton>Confirm</PrimaryButton>
+                </View>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     inputContainer: {
-        //flex:1,
+        justifyContent: 'center',
+        alignItems: 'center',
         padding: 16,
         marginTop: 100,
         marginHorizontal: 16,
-        borderRadius: 8,
-        elevation: 8,
-        backgroundColor: '#72063c'
+        borderRadius: 28,
+        elevation: 8,  /* this is can be used only for android */ 
+        shadowColor: 'black', /* this is can be used only for iOS */ 
+        shadowOffset: {width: 0, height: 2}, /* this is can be used only for iOS */ 
+        shadowRadius: 6, /* this is can be used only for iOS */ 
+        shadowOpacity: 0.25, /* this is can be used only for iOS */ 
+        backgroundColor: '#3b021f'
     },
     numberInput: {
         height: 60,
@@ -37,6 +48,12 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         fontWeight: 'bold',
         textAlign: 'center'
+    },
+    buttonsContainer: {
+        flexDirection: 'row',
+    },
+    buttonContainer: {
+        flex: 1,
     }
 })
 
